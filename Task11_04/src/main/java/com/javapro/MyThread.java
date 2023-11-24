@@ -8,25 +8,11 @@ public class MyThread extends Thread{
     }
     public void run()
     {
-        try
-        {
-            if(t.getName().equals("First Thread")) {
-                System.out.println(t.getName()+": finished");
-            }
-            else if(t.getName().equals("Second Thread"))
-            {
-                Thread.sleep(10);
-                System.out.println(t.getName()+": finished");
-            }
-            else
-            {
-                Thread.sleep(100);
-                System.out.println(t.getName()+": finished");
-            }
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            System.out.println(e);
         }
-        catch(InterruptedException e)
-        {
-            System.out.println(t.getName()+" is interrupted");
-        }
+        System.out.println(t.getName()+" is finished.");
     }
 }
